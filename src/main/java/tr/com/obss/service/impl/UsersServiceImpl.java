@@ -41,4 +41,9 @@ public class UsersServiceImpl implements UsersService {
     public List<Users> getAllUser() {
         return usersDao.getAllUser();
     }
+
+    @Override
+    public Users getUserById(int userID) {
+        return usersDao.getUserById(userID);
+    }
 }
