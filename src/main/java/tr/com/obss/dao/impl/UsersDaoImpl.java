@@ -47,7 +47,7 @@ public class UsersDaoImpl implements UsersDao {
 
     @Override
     public List getAllUser() {
-        List < UsersDao > users = jdbcTemplate.query("SELECT * FROM users", new BeanPropertyRowMapper(Users.class));
+        List < UsersDao > users = jdbcTemplate.query("SELECT * FROM users ORDER BY username", new BeanPropertyRowMapper(Users.class));
         return users;
     }
 
