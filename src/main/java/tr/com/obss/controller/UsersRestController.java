@@ -32,11 +32,6 @@ public class UsersRestController {
         return usersService.getUser(userName);
     }
 
-    @GetMapping("/byId/{userID}")
-    public Users getUserById(@PathVariable int userID){
-        return usersService.getUserById(userID);
-    }
-
     @PostMapping
     public Users saveUser(@RequestBody Users users) {
         return usersService.addUser(users);

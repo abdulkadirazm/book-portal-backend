@@ -51,13 +51,6 @@ public class UsersDaoImpl implements UsersDao {
         return users;
     }
 
-    @Override
-    public Users getUserById(int userID) {
-        Users users = (Users) jdbcTemplate.queryForObject("SELECT * FROM users WHERE userID = ?", new Object[] { userID } , new BeanPropertyRowMapper(Users.class));
-
-        return users;
-    }
-
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate){
         this.jdbcTemplate = jdbcTemplate;
     }
