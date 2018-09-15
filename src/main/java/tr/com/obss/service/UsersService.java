@@ -12,4 +12,5 @@ public interface UsersService {
     public void deleteUser(int userID);
     public List<UsersDao> getUser(String userName);
     public List<Users> getAllUser();
+    public Users getUserById(int userID);
 }
