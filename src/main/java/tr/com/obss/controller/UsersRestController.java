@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.ModelAndView;
 import tr.com.obss.dao.UsersDao;
+import tr.com.obss.model.Role;
 import tr.com.obss.model.Users;
 import tr.com.obss.service.UsersService;
 
@@ -32,9 +33,9 @@ public class UsersRestController {
         return usersService.getUser(userName);
     }
 
-    @PostMapping
-    public Users saveUser(@RequestBody Users users) {
-        return usersService.addUser(users);
+    @PostMapping("/{roleID}")
+    public Users saveUser(@RequestBody Users users, @PathVariable int roleID) {
+        return usersService.addUser(users, roleID);
     }
 
     @PutMapping("/{userID}")

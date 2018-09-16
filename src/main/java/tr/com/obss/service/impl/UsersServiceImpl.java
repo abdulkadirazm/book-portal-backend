@@ -3,6 +3,7 @@ package tr.com.obss.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tr.com.obss.dao.UsersDao;
+import tr.com.obss.model.Role;
 import tr.com.obss.model.Users;
 import tr.com.obss.service.UsersService;
 
@@ -16,8 +17,8 @@ public class UsersServiceImpl implements UsersService {
     private UsersDao usersDao;
 
     @Override
-    public Users addUser(Users users) {
-        usersDao.addUser(users);
+    public Users addUser(Users users, int roleID) {
+        usersDao.addUser(users, roleID);
         return users;
     }
 

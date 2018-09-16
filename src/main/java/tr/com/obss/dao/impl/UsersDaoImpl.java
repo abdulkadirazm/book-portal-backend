@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 import tr.com.obss.dao.UsersDao;
+import tr.com.obss.model.Role;
 import tr.com.obss.model.Users;
 
 import javax.jws.soap.SOAPBinding;
@@ -17,9 +18,11 @@ public class UsersDaoImpl implements UsersDao {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public void addUser(Users users) {
+    public void addUser(Users users, int roleID) {
         jdbcTemplate.update("INSERT INTO users (userID, username, email, password) VALUES (?, ?, ?, ?)",
                 users.getUserID(), users.getUsername(), users.getEmail(), users.getPassword());
+        List < Users > user = jdbcTemplate.query("SELECT userID FROM users WHERE username = ?", new String[]{users.getUsername()}, new BeanPropertyRowMapper(Users.class));
+        jdbcTemplate.update("INSERT INTO user_role (userID, roleID) VALUES (?, ?)", user.get(0).getUserID(), roleID);
         System.out.println("User Added!!");
     }
 
