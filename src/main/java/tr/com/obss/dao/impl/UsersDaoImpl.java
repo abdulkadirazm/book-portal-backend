@@ -8,7 +8,6 @@ import tr.com.obss.dao.UsersDao;
 import tr.com.obss.model.Role;
 import tr.com.obss.model.Users;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 @Repository("usersDao")
@@ -18,11 +17,9 @@ public class UsersDaoImpl implements UsersDao {
     JdbcTemplate jdbcTemplate;
 
     @Override
-    public void addUser(Users users, int roleID) {
-        jdbcTemplate.update("INSERT INTO users (userID, username, email, password) VALUES (?, ?, ?, ?)",
-                users.getUserID(), users.getUsername(), users.getEmail(), users.getPassword());
-        List < Users > user = jdbcTemplate.query("SELECT userID FROM users WHERE username = ?", new String[]{users.getUsername()}, new BeanPropertyRowMapper(Users.class));
-        jdbcTemplate.update("INSERT INTO user_role (userID, roleID) VALUES (?, ?)", user.get(0).getUserID(), roleID);
+    public void addUser(Users users) {
+        jdbcTemplate.update("INSERT INTO users (userID, username, email, password, roleID) VALUES (?, ?, ?, ?, ?)",
+                users.getUserID(), users.getUsername(), users.getEmail(), users.getPassword(), users.getRoleID());
         System.out.println("User Added!!");
     }
 

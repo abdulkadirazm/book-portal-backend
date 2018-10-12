@@ -17,8 +17,8 @@ public class UsersServiceImpl implements UsersService {
     private UsersDao usersDao;
 
     @Override
-    public Users addUser(Users users, int roleID) {
-        usersDao.addUser(users, roleID);
+    public Users addUser(Users users) {
+        usersDao.addUser(users);
         return users;
     }
 

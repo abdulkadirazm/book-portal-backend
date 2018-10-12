@@ -39,7 +39,7 @@ public class AppConfig implements WebMvcConfigurer {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         //MySQL database we are using
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/bookportal");//change url
+        dataSource.setUrl("jdbc:mysql://localhost:3306/bookportal?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC");//change url
         dataSource.setUsername("root");//change userid
         dataSource.setPassword("54565321aa");//change pwd
 

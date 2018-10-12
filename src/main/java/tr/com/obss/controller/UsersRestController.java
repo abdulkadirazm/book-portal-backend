@@ -33,9 +33,9 @@ public class UsersRestController {
         return usersService.getUser(userName);
     }
 
-    @PostMapping("/{roleID}")
-    public Users saveUser(@RequestBody Users users, @PathVariable int roleID) {
-        return usersService.addUser(users, roleID);
+    @PostMapping
+    public Users saveUser(@RequestBody Users users) {
+        return usersService.addUser(users);
     }
 
     @PutMapping("/{userID}")

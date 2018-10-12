@@ -3,9 +3,19 @@ package tr.com.obss.model;
 public class Users {
 
     private int userID;
+    private int roleID;
     private String username;
     private String email;
     private String password;
+
+
+    public int getRoleID() {
+        return roleID;
+    }
+
+    public void setRoleID(int roleID) {
+        this.roleID = roleID;
+    }
 
     public Users(){
 

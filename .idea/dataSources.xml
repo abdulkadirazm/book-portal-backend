@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="bookportal@localhost" uuid="eaca9969-687e-49cd-9312-3b8e04581e25">
+    <data-source source="LOCAL" name="bookportal@localhost" uuid="012b9caa-bd8f-4872-be01-9e724567d176">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/bookportal?verifyServerCertificate=false&amp;useSSL=true</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/bookportal</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
